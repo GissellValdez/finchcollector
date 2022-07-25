@@ -13,3 +13,13 @@ finches = [
   Finch('Sachi'),
   Finch('Raven')
 ]
+
+# Define the home view
+def home(request):
+  return HttpResponse('<h1>Home Screen</h1>')
+  
+def about(request):
+  return render(request, 'about.html')
+
+def all(request):
+  return render(request, 'finches/index.html', { 'finches': finches })
